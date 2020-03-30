@@ -77,16 +77,14 @@ function drawChart(region, uri){
         
             for(var i = 0; i < data.length; i++){
                 var data_obj = data[i];
-                if(data_obj['date'] != 20200328 && data_obj['date'] != 20200327){
-                    for(var key in data_obj){
-                        // not grabbing meta keys, ignore them
-                        if(parsed_data[key] !== undefined){                            
-                            if(parsed_data[key]['data'] === undefined){
-                                parsed_data[key]['data'] = [];
-                            }
-
-                            parsed_data[key]['data'].push(data_obj[key]);
+                for(var key in data_obj){
+                    // not grabbing meta keys, ignore them
+                    if(parsed_data[key] !== undefined){                            
+                        if(parsed_data[key]['data'] === undefined){
+                            parsed_data[key]['data'] = [];
                         }
+
+                        parsed_data[key]['data'].push(data_obj[key]);
                     }
                 }
             }
