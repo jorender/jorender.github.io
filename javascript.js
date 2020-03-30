@@ -84,7 +84,12 @@ function drawChart(region, uri){
                             parsed_data[key]['data'] = [];
                         }
 
-                        parsed_data[key]['data'].push(data_obj[key]);
+                        if(data_obj[key] == null){
+                            parsed_data[key]['data'].push(0);
+                        }
+                        else{
+                            parsed_data[key]['data'].push(data_obj[key]);
+                        }
                     }
                 }
             }
